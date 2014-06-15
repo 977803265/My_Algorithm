@@ -14,12 +14,12 @@ int main() {
 	}
 
 //	printf("RSelect result:%d\n\n",RSelect(A, 0, total-1, 9));
-	printf("DSelect result:%d\n\n",DSelect(A, 0, total-1, 13));
-	quick(A, total);
+//	printf("DSelect result:%d\n\n",DSelect(A, 0, total-1, 13));
+//	quick(A, total);
 
-	for (i = 0; i < total; i++) {
-		printf("%d\n", A[i]);
-	}
+//	for (i = 0; i < total; i++) {
+//		printf("%d\n", A[i]);
+//	}
 
 	if (A != NULL) {
 		free(A);
