@@ -5,7 +5,7 @@
 #include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include "repre.h"
+#include "../lib/graph.h"
 #include "../lib/stack.h"
 //=================== recursive implementation using recursive call===================/
 void help_DFS(struct Graph* g, int start, bool* V);

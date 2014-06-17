@@ -7,10 +7,10 @@
 //====================================================
 #include <stdlib.h>
 #include <stdio.h>
-#include "repre.h"
+#include "graph.h"
 
 struct Graph*
-create_graph(int num) {
+create_directed_graph(int num) {
 	// new graph
 	struct Graph* g = malloc(sizeof(struct Graph));
 	g->no = num;
@@ -39,11 +39,11 @@ add_edge(struct Graph *g, int src, int dest) {
 	node->id = dest;
 	node->next = g->head[src].next;
 	g->head[src].next	= node;	
-	// since graph is undirected, add opposite edge
-	node = malloc(sizeof(struct Node));
-	node->id = src;
-	node->next = g->head[dest].next;
-	g->head[dest].next	= node;	
+//	// since graph is undirected, add opposite edge
+//	node = malloc(sizeof(struct Node));
+//	node->id = src;
+//	node->next = g->head[dest].next;
+//	g->head[dest].next	= node;	
 	
 }
 

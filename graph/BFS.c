@@ -2,7 +2,7 @@
  * breadth first search
  * using array queue
  */
-#include "graph.h"
+#include "../lib/graph.h"
 #include "../lib/queue.h"
 void
 BFS(struct Graph* g, int start) {
