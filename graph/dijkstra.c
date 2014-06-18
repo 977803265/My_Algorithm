@@ -1,21 +1,20 @@
-#include "dijkstra.h"
 #include "../lib/priority_queue.h"
 #include <stdbool.h>
 #include <stdlib.h>
+#include <stdio.h>
 
 /*
  * dijkstra algorithm implementation
  * using priority queue
  *
  */
-const int infinite = 55536;
-void Dijkstra(int** adj_matrix, int num, int s, int dist[]);
+const int infinite = 55535;
 
 void 
 Dijkstra(int** adj_matrix, int num, int start, int dist[]) {
 	int i, u, v;
 	int id, key;
-	int* access = malloc(sizeof(bool) * num);
+	bool* access = malloc(sizeof(bool) * num);
 	struct PQueue* pq = create_pqueue(num);
 	
 	for (i = 0; i < num; i++) {
@@ -29,7 +28,7 @@ Dijkstra(int** adj_matrix, int num, int start, int dist[]) {
 		insert(pq, i, dist[i]);
 	}
 
-	while((i++) < num) {
+	for(i = 0; i < num; i++) {
 		extract_min(pq, &u, &key);
 		access[u] = true;
 		for (v = 0; v < num; v++) {
@@ -39,4 +38,18 @@ Dijkstra(int** adj_matrix, int num, int start, int dist[]) {
 			}
 		}
 	}
+
+	destroy_pqueue(pq);
+	free(access);
+
+}
+
+void
+Dijkstra_print(int start, int dist[], int num) {
+	int i;
+	printf("source: %d\n", start);
+	for (i = 0; i < num; i++) {
+		printf("%d\t", dist[i]);
+	}
+	printf("\n");
 }

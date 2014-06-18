@@ -1,4 +1,4 @@
-SRC = main.c repre.c DFS.c  ../lib/stack.c
+SRC = main.c ../lib/graph.c ../lib/priority_queue.c  ../lib/stack.c Dijkstra.c
 
 main: $(SRC)
 	cc -g -o main $(SRC)

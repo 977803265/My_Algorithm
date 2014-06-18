@@ -1,26 +1,35 @@
-#include "graph.h"
+#include <stdlib.h>
+#include "../lib/graph.h"
+#include "../lib/priority_queue.h"
+#include "graph_alg.h"
 
-const int vertice = 9;
+const int V = 9;
 int main() {
-	struct Graph* g = create_graph(vertice);
+	int** adj_mat;
+	int* dist;
+	int i, j;
+	adj_mat = (int **) malloc(sizeof(int *) * V);
+	for (i = 0; i < V; i++) {
+		adj_mat[i] = (int *) malloc(sizeof(int) * V);
+	}
 
-	add_edge(g, 0, 7);
+	int graph[V][V] = {{0, 4, 0, 0, 0, 0, 0, 8, 0},
+	                      {4, 0, 8, 0, 0, 0, 0, 11, 0},
+	                      {0, 8, 0, 7, 0, 4, 0, 0, 2},
+	                      {0, 0, 7, 0, 9, 14, 0, 0, 0},
+	                      {0, 0, 0, 9, 0, 10, 0, 0, 0},
+	                      {0, 0, 4, 0, 10, 0, 2, 0, 0},
+	                      {0, 0, 0, 14, 0, 2, 0, 1, 6},
+	                      {8, 11, 0, 0, 0, 0, 1, 0, 7},
+	                      {0, 0, 2, 0, 0, 0, 6, 7, 0}
+	                     };
 
-	add_edge(g, 0, 1);
-	add_edge(g, 1, 2);
-	add_edge(g, 2, 3);
-
-	add_edge(g, 0, 4);
-	add_edge(g, 4, 5);
-
-	add_edge(g, 5, 6);
-
-	add_edge(g, 8, 7);
-//	add_edge(g, 3, 4);
-
-	print_graph(g);
-
-	RDFS(g, 8);
-
-	destroy_graph(g);
+	for (i = 0; i < V; i++) {
+		for (j = 0; j < V; j++) {
+			adj_mat[i][j] = graph[i][j];
+		}
+	}
+	dist = malloc(sizeof(int) * V);
+	Dijkstra(adj_mat, V, 0, dist);
+	Dijkstra_print(0, dist, V);
 }
