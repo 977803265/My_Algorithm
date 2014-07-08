@@ -12,4 +12,5 @@ struct Point {
 int DSelect(int A[], long left, long right, long ith);
 int RSelect(int A[], long left, long right, long ith);
 float find_closest_pair(struct Point A[], long size);
+
 #endif

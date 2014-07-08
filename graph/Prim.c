@@ -1,6 +1,7 @@
 /*
  * Prim MST algorithm
  * implementation using heap data structure
+ * referred from: http://www.geeksforgeeks.org/greedy-algorithms-set-5-prims-minimum-spanning-tree-mst-2/
  */
 #include <stdio.h>
 #include <stdbool.h>

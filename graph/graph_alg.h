@@ -10,3 +10,6 @@ void BellmanFord_print(int start, int dist[], int num);
 
 void Prim(int** graph, int num, int parent[]);
 void print_MST(int parent[], int num, int** graph);
+
+
+void kruskal(struct Graph* graph, int parent[], int num);

@@ -3,7 +3,7 @@
 #include "sort.h"
 #include "utility.h"
 
-const long total = 1000000;
+const long total = 10000000;
 int 
 main() {
 	int i;
@@ -16,14 +16,14 @@ main() {
 	}
 		
 	old_time = get_time();	
-	merge(A, total);
+	quick(A, total);
 	new_time = get_time();	
 
 	printf("time cost:%llu \n", new_time - old_time);
 
-//	for (i = 0; i < total; i++) {
+	for (i = 0; i < total; i++) {
 //		printf("%d\n", A[i]);
-//	}
+	}
 	
 	if (A != NULL) {
 		free(A);
