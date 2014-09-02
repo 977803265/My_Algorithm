@@ -43,7 +43,7 @@ KMP(char S[], int s_len, char P[], int p_len) {
 				printf("\nm:%d, i:%d", m, i);
 			}
 			else {
-				m = m + i + 1;
+				m = m + 1;
 				i = 0;
 			}
 		}
@@ -51,8 +51,8 @@ KMP(char S[], int s_len, char P[], int p_len) {
 	return 0;
 }
 int main(int argc, char** argv) {
-	char S[] = "ABC ABCDAB ABCDABCDABDE";
-	char P[] = "ABCDABD";
+	char S[] = "mississippi";
+	char P[] = "issip";
 	int i = KMP(S, strlen(S), P, strlen(P));
 	printf("\n%d\n", i);
 }

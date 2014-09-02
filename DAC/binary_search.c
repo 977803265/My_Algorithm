@@ -21,15 +21,30 @@ binary_search_helper(int elem[], int i, int j, int key) {
 	// didn't find
 	if (j < i) {
 		return -1;
-	}
-
-	else if (elem[mid] == key) {
+	} else if (elem[mid] == key) {
 		return mid;
-	}
-	else if (key < elem[mid]) {
+	} else if (key < elem[mid]) {
 		return binary_search_helper(elem, i, mid - 1, key);
-	}
-	else {
+	} else {
 		return binary_search_helper(elem, mid + 1, j, key);
 	}
+}
+
+/*
+ * iterative version
+ */
+int
+iter_binary_search(int elem[], int left, int right, int target) {
+	int mid;
+	while (left <= right) {
+		mid = (left + right) / 2;
+		if (elem[mid] == target) {
+			return mid;
+		} else if (target < elem[mid]) {
+			right = mid - 1;
+		} else {
+			left = mid + 1;
+		}
+	}
+	return -1;
 }

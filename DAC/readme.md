@@ -16,3 +16,9 @@ trick of implementing this folder files
 
 4. how to implement base case
 5. how to write nice recursive function
+
+list of content
+=========================================
+
+1. binary search (recursive and iterative version)
+---------------------------------------------------
