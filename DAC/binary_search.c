@@ -37,7 +37,10 @@ int
 iter_binary_search(int elem[], int left, int right, int target) {
 	int mid;
 	while (left <= right) {
-		mid = (left + right) / 2;
+		// next line will cause int overflow !!!
+		// mid = (left + right) / 2;
+		// next line is the correct way
+		int mid = left + (right - left)/2;
 		if (elem[mid] == target) {
 			return mid;
 		} else if (target < elem[mid]) {
